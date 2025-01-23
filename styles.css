@@ -1,0 +1,262 @@
+/* Estilos generales*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root{
+    --btnPrimario: #007bff ;
+    --btnHover:#0056b3;;
+    --footerColor: #148f77;
+    --colorLetras: #ffffff;
+    --colorSub: #000000;
+    --color-azul-oscuro: rgb(58, 102, 150);  /* Color azul oscuro */
+    --color-azul-claro: rgba(62, 155, 255, 0.4); /* Color azul claro */
+}
+
+body{
+    background-image: linear-gradient(var(--color-azul-oscuro), var(--color-azul-claro));
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+/* Header*/
+
+header{
+    background-color:var(--colorSub);
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;               /* Activa Flexbox en el contenedor */
+    justify-content: space-between;     /* Opcional: centra los elementos horizontalmente */
+    list-style-type: none;       /* Elimina los puntos de la lista */
+    align-items: center;   /* Solo centrado vertical */
+    height: 100%;
+}
+
+nav ul li{
+    margin: 0 15px;
+    font-size: 30px;
+    border-right: solid var(--colorLetras) 1px;
+    width: 100%;    
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--colorLetras);    
+}
+
+/* Seccion perfil*/
+
+.perfil{
+    display: grid;
+    grid-template-columns: 25% 75%;    
+    margin: 20px;
+    box-shadow: 0 4px 20px 0 var(--colorSub), 0 20px 20px 0 var(--colorSub);
+    border-radius: 10px;
+}
+
+.perfil img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit:cover ;
+}
+
+.sobreMi{
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.sobreMi p{
+  font-size: 30px;
+  color: var(--colorLetras);
+  margin: 10px;
+}
+
+b{
+    display: flex;
+    justify-content: center;
+}
+
+ .enlaces{
+    text-decoration: none;
+    font-size: 25px;
+    display: inline-block;
+    padding: 10px 20px; /* Espaciado dentro del "botón" */
+    background-color: var(--btnPrimario); /* Color de fondo del botón */
+    color: var(--colorLetras); /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 20px; /* Espaciado superior para separar el botón del texto */
+    transition: background-color 0.3s ease; /* Efecto de transición al hacer hover */
+}
+
+.enlaces:hover {
+    background-color: var(--btnHover); /* Color de fondo cuando el botón está en hover */
+}
+
+
+/* Seccion tecnologías*/
+.tecnologias{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 20px;
+    column-gap: 20px;
+    /* column-gap: 20px;
+    margin: 0 100px;
+    margin-bottom: 150px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 20px 20px 0 rgba(0, 0, 0, 1);
+    border-radius: 10px;
+}
+
+.titulo{
+ text-align: center;
+ font-size: 30px;
+ font-style: italic;
+ text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+ margin-bottom: 10px;
+}
+
+.tecnologias img{
+    width: 100%;
+    max-height: 450px; 
+    padding: 10px;  
+    border-radius: 10px;
+}
+
+/* Seccion proyectos*/
+.proyectos {
+    display: grid;                      /* Activamos grid */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+}
+
+.contenedorProyectos{
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 20px 20px 0 rgba(0, 0, 0, 1);
+    margin: 20px;
+    border-radius: 10px;
+}
+
+figure img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+figure figcaption{
+    font-size: 20px;
+    display: inline-block;
+    min-height: 50px;
+}
+
+  /* footer*/
+
+footer {
+    padding: 20px;  /* Agrega espacio interno alrededor del contenido */
+    color: var(--colorLetras);  /* Establece el color del texto para mejorar la visibilidad */
+    text-align: center;  /* Centra el texto en el footer */
+    background-color: var(--footerColor);
+    margin-top: 20px;
+  }
+
+
+  @media screen and (max-width: 375px) {
+    nav ul {
+        flex-direction: column; /* Pone los elementos de navegación en columna */
+        align-items: flex-start; /* Alinea los elementos de navegación al principio */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Separa más los elementos */
+        border-right: none; /* Elimina el borde derecho */
+        border-bottom: solid var(--colorLetras) 1px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+    
+    .sobreMi p{
+        font-size: 16px;
+    }
+
+    .perfil {
+        grid-template-columns: 1fr; /* Pone el perfil en una sola columna */
+    }
+
+    .perfil img {
+        height: auto; /* Hace que la imagen se ajuste automáticamente */
+    }
+
+    .tecnologias {
+        grid-template-columns: 1fr; /* Hace que las tecnologías se muestren en columna */
+    }
+
+    .proyectos {
+        grid-template-columns: 1fr; /* Hace que los proyectos se muestren en columna */
+    }
+}
+
+
+/* Para dispositivos móviles y tabletas (menos de 768px) */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center; /* Centra los elementos de navegación */
+    }
+
+    nav ul li{
+        border-bottom: solid var(--colorLetras) 1px;
+        border-right: none;        
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .sobreMi p{
+        font-size: 16px;
+    }
+
+    .perfil {
+        grid-template-columns: 1fr; /* Hace que el perfil se vea en columna */
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(2, 1fr); /* Muestra las tecnologías en 2 columnas */
+    }
+
+    .proyectos {
+        grid-template-columns: repeat(2, 1fr); /* Muestra los proyectos en 2 columnas */
+    }
+}
+
+/* Para pantallas grandes (más de 1024px) */
+@media screen and (min-width: 1024px) {
+    .perfil {
+        grid-template-columns: 30% 70%; /* Ajusta las columnas del perfil */
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas de tecnologías */
+    }
+
+    .proyectos {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas de proyectos */
+    }
+}
