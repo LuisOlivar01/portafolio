@@ -238,11 +238,11 @@ footer {
     }
 
     .tecnologias {
-        grid-template-columns: repeat(2, 1fr); /* Muestra las tecnologías en 2 columnas */
+        grid-template-columns: 1fr; /* Muestra las tecnologías en 2 columnas */
     }
 
     .proyectos {
-        grid-template-columns: repeat(2, 1fr); /* Muestra los proyectos en 2 columnas */
+        grid-template-columns: 1fr; /* Muestra los proyectos en 2 columnas */
     }
 }
 
